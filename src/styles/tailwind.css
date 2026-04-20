@@ -2,260 +2,254 @@
 @tailwind components;
 @tailwind utilities;
 
-root {
-  --background #FAF8F3;
-  --foreground #1A1A1A;
-  --primary #1B3A6B;
-  --primary-foreground #FFFFFF;
-  --secondary #F0EBE1;
-  --secondary-foreground #1A1A1A;
-  --accent #C9A84C;
-  --accent-foreground #1A1A1A;
-  --muted #EDE8DF;
-  --muted-foreground #6B6B6B;
-  --card #FFFFFF;
-  --card-foreground #1A1A1A;
-  --border #DDD7CC;
-  --input #DDD7CC;
-  --ring #1B3A6B;
-  --radius 4px;
-  --font-sans var(--font-plus-jakarta-sans), sans-serif;
-  --font-mono var(--font-ibm-plex-mono), monospace;
+:root {
+  --background: #FAF8F3;
+  --foreground: #1A1A1A;
+  --primary: #1B3A6B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0EBE1;
+  --secondary-foreground: #1A1A1A;
+  --accent: #C9A84C;
+  --accent-foreground: #1A1A1A;
+  --muted: #EDE8DF;
+  --muted-foreground: #6B6B6B;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --border: #DDD7CC;
+  --input: #DDD7CC;
+  --ring: #1B3A6B;
+  --radius: 4px;
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
 }
 
 @layer base {
-   {
-    box-sizing border-box;
-    border-color var(--border);
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
   }
 
   html {
-    scroll-behavior smooth;
+    scroll-behavior: smooth;
   }
 
   body {
-    background-color var(--background);
-    color var(--foreground);
-    font-family var(--font-sans);
-    -webkit-font-smoothing antialiased;
-    -moz-osx-font-smoothing grayscale;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6, p {
-    margin 0;
+    margin: 0;
   }
 }
 
 @layer components {
   .grid-overlay {
-    position fixed;
-    inset 0;
-    pointer-events none;
-    z-index 0;
-    display flex;
-    justify-content center;
-  }
-
-:root {
-  --background: #FAF8F3;
-  --foreground: #1A1A1A;
-  --primary: #1B3A6B;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .grid-inner {
-    width 100%;
-    height 100%;
-    max-width 80rem;
-    display flex;
-    justify-content space-between;
-    padding 0 1rem;
+    width: 100%;
+    height: 100%;
+    max-width: 80rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
   }
 
   .grid-line-v {
-    width 1px;
-    height 100%;
-    background rgba(219, 210, 198, 0.5);
+    width: 1px;
+    height: 100%;
+    background: rgba(219, 210, 198, 0.5);
   }
 
   .text-gradient-primary {
-    background-clip text;
-    -webkit-background-clip text;
-    color transparent;
-    background-image linear-gradient(to bottom, #1B3A6B, #4A6FA5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #1B3A6B, #4A6FA5);
   }
 
   .border-subtle {
-    border-color var(--border);
+    border-color: var(--border);
   }
 
   .label-tag {
-    font-family var(--font-mono);
-    font-size 10px;
-    letter-spacing 0.15em;
-    text-transform uppercase;
-    color var(--muted-foreground);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
   }
 }
 
 @layer utilities {
   .animate-on-scroll {
-    animation-play-state paused !important;
+    animation-play-state: paused !important;
   }
 
   .animate-on-scroll.animate {
-    animation-play-state running !important;
+    animation-play-state: running !important;
   }
 }
 
- Keyframes 
+/* Keyframes */
 @keyframes animationIn {
   0% {
-    opacity 0;
-    transform translateY(30px);
-    filter blur(8px);
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
   }
   100% {
-    opacity 1;
-    transform translateY(0);
-    filter blur(0px);
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
   }
 }
 
 @keyframes fadeInUp {
   0% {
-    opacity 0;
-    transform translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-    opacity 1;
-    transform translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes scaleIn {
   0% {
-    opacity 0;
-    transform scale(0.95);
+    opacity: 0;
+    transform: scale(0.95);
   }
   100% {
-    opacity 1;
-    transform scale(1);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow 0 0 8px rgba(201, 168, 76, 0.3);
+    box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
   }
   50% {
-    box-shadow 0 0 20px rgba(201, 168, 76, 0.6);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.6);
   }
 }
 
 @keyframes spin {
-  from { transform rotate(0deg); }
-  to { transform rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
- Reveal word animation 
+/* Reveal word animation */
 .reveal-word {
-  opacity 0.12;
-  transition opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.12;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-word.active {
-  opacity 1;
+  opacity: 1;
 }
 
- Step indicator 
+/* Step indicator */
 .step-indicator {
-  transition all 0.5s ease;
-  background var(--border);
+  transition: all 0.5s ease;
+  background: var(--border);
 }
 
 .step-indicator.active {
-  background var(--accent);
+  background: var(--accent);
 }
 
 .step-text {
-  transition all 0.5s ease;
-  color var(--muted-foreground);
+  transition: all 0.5s ease;
+  color: var(--muted-foreground);
 }
 
 .step-text.active {
-  color var(--foreground);
+  color: var(--foreground);
 }
 
- FAQ animation 
+/* FAQ animation */
 .faq-answer {
-  max-height 0;
-  overflow hidden;
-  transition max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
 }
 
 .faq-item.open .faq-answer {
-  max-height 300px;
-  padding-bottom 1.5rem;
+  max-height: 300px;
+  padding-bottom: 1.5rem;
 }
 
 .faq-item.open .faq-chevron {
-  transform rotate(180deg);
+  transform: rotate(180deg);
 }
 
- Gallery hover 
+/* Gallery hover */
 .gallery-item img {
-  transition transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-  filter grayscale(20%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: grayscale(20%);
 }
 
-.gallery-itemhover img {
-  transform scale(1.05);
-  filter grayscale(0%);
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
- Nav link underline 
+/* Nav link underline */
 .nav-link {
-  position relative;
+  position: relative;
 }
 
-.nav-linkafter {
-  content '';
-  position absolute;
-  bottom -2px;
-  left 0;
-  width 0;
-  height 1px;
-  background var(--accent);
-  transition width 0.3s ease;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
-.nav-linkhoverafter,
-.nav-link.activeafter {
-  width 100%;
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
- Mobile menu 
+/* Mobile menu */
 .mobile-menu {
-  transition opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
- Input focus 
+/* Input focus */
 .form-input {
-  background transparent;
-  border-bottom 1px solid var(--border);
-  transition border-color 0.3s ease;
-  outline none;
-  padding 12px 0;
-  width 100%;
-  color var(--foreground);
-  font-family var(--font-sans);
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+  outline: none;
+  padding: 12px 0;
+  width: 100%;
+  color: var(--foreground);
+  font-family: var(--font-sans);
 }
 
-.form-inputfocus {
-  border-bottom-color var(--primary);
+.form-input:focus {
+  border-bottom-color: var(--primary);
 }
 
-.form-inputplaceholder {
-  color var(--muted-foreground);
-  font-size 0.875rem;
+.form-input::placeholder {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
 }
