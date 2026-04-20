@@ -57,8 +57,9 @@ root {
   }
 
 :root {
-    --foreground: #1A1A1A;
-    --primary: #1B3A6B;
+  --background: #FAF8F3;
+  --foreground: #1A1A1A;
+  --primary: #1B3A6B;
   }
 
   .grid-inner {
